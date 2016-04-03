@@ -2,22 +2,29 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Socket.io Basics</title>
+	<title>Chat App by Ganesh Sawhney</title>
 	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="./css/styles.css">
 	<style>
 	.well {
 		margin-top: 35px;
 	}
+	#designedby{
+	    position: fixed;
+	    top: 0;
+	    right: 0;
+	  }
 	</style>	
 </head>
 <body>
+
+<div id="designedby">Designed and Developed by Ganesh Sawhney</div>
 
 <div class="container">
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3 well">
 
-			<a href="/index.html" class="btn btn-info">Change Settings</a>
+			<a href="/index.html" class="btn btn-info">Exit/Change Chat Room</a>
 			<button id="currentUsers" class="btn btn-info" style="float: right;">Display Current Users</button>
 			<h1 class="text-center room-title"></h1>
 			<br>
@@ -47,6 +54,7 @@
 		</div>
 	</div>
 </div>
+
 
 
 	<script src="/js/jquery-2.2.2.min.js"></script>
