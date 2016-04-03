@@ -14,8 +14,8 @@ io.on('connection',function (socket){
 		//now the message has been recieved but it doesnot gets sent out to do this do below:
 
 		//send to everybody including person who sent it use io.emit
-		//send to everyone except person who sent it use below
-		socket.broadcast.emit('message', message);
+		//send to everyone except person who sent it use socket.broadcast
+		.emit('message', message);
 	});
 
 	//event, data to send
