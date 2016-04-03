@@ -16,12 +16,15 @@ jQuery('.room-title').text(room);
 socket.on('message', function(message) {
 	var momentTimestamp = moment.utc(message.timestamp);
 	var $messages = jQuery('.messages');
+	var $message = jQuery('<li class="list-group-item"></li>');
+
 	console.log('New Message:');
 	console.log(message.text);
 
-	$messages.append('<p><strong>' + message.name + ' ||| ' + momentTimestamp.local().format("DMMM h:mm:ssa") + ':&nbsp </strong></p>');
+	$message.append('<p><strong>' + message.name + ' ||| ' + momentTimestamp.local().format("DMMM h:mm:ssa") + ':&nbsp </strong></p>');
 
-	$messages.append('<p>' + message.text + '</p>');
+	$message.append('<p>' + message.text + '</p>');
+	$messages.append($message);
 })
 
 
