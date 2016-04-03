@@ -31,7 +31,7 @@ socket.on('message', function(message) {
 	$message.append('<p><strong>' + message.name + ' || ' + momentTimestamp.local().format("D-MMM h:mm:sa") + ':&nbsp </strong></p>');
 
 	$message.append('<p>' + message.text + '</p>');
-	$messages.append($message);
+	$messages.prepend($message);
 })
 
 

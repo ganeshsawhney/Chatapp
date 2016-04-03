@@ -17,29 +17,32 @@
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3 well">
 
-			<a href="/index.html">Change Settings</a>
+			<a href="/index.html" class="btn btn-info">Change Settings</a>
+			<button id="currentUsers" class="btn btn-info" style="float: right;">Display Current Users</button>
 			<h1 class="text-center room-title"></h1>
-
-			<ul class="messages list-group">
-				<!-- Mesaages end up here -->
-			</ul>
-
+			<br>
 			<form id="message-form">
+
 				<div class="form-group">
 					<div class="input-group">
 
 					<span class="input-group-addon">
 						<i class="glyphicon glyphicon-comment"></i>
 					</span>
-					<input type="text" class="form-control" placeholder="Type your Message here" name="message" required/>
+					<input type="text" class="form-control" placeholder="Type your Message here" name="message" required autocomplete="off"/>
+
+				<input id="form-submit" class="form-control btn btn-primary" type="submit"/>
 
 					</div>
 				</div>
-			<div class="form-group">
-				<input id="form-submit" type="submit" class="btn btn-primary btn-block"/>
-			</div>
+			
 			</form>
-				<button id="currentUsers" class="btn btn-primary btn-block">Display Current Users</button>
+				
+
+
+			<ul class="messages list-group">
+				<!-- Mesaages end up here -->
+			</ul>
 
 		</div>
 	</div>
