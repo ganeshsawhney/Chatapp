@@ -21,7 +21,14 @@ socket.on('message', function(message) {
 	console.log('New Message:');
 	console.log(message.text);
 
-	$message.append('<p><strong>' + message.name + ' ||| ' + momentTimestamp.local().format("DMMM h:mm:ssa") + ':&nbsp </strong></p>');
+	if(message.name=='System')
+		message.name='<font style="color: red;">System</font>';
+	else if(name===message.name)
+		message.name='<font style="color: green;">Myself</font>';
+	else
+		message.name='<font style="color: blue;">'+message.name+'</font>';
+
+	$message.append('<p><strong>' + message.name + ' || ' + momentTimestamp.local().format("D-MMM h:mm:sa") + ':&nbsp </strong></p>');
 
 	$message.append('<p>' + message.text + '</p>');
 	$messages.append($message);
