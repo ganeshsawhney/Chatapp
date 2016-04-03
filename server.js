@@ -3,6 +3,7 @@ var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http)
+var moment = require('moment');
 
 app.use(express.static(__dirname + '/public'))
 
@@ -11,16 +12,15 @@ io.on('connection',function (socket){
 
 	socket.on('message', function (message) {
 		console.log('Message Recieved: ' + message.text);
-		//now the message has been recieved but it doesnot gets sent out to do this do below:
 
-		//send to everybody including person who sent it use io.emit
-		//send to everyone except person who sent it use socket.broadcast
+		message.timestamp = moment().valueOf();
 		io.emit('message', message);
 	});
 
 	//event, data to send
 	socket.emit('message',{ 
-		text: 'Welcome to the Chat Application'
+		text: 'Welcome to the Chat Application',
+		timestamp: moment().valueOf()
 	});
 });
 
