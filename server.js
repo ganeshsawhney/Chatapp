@@ -15,7 +15,7 @@ io.on('connection',function (socket){
 
 		//send to everybody including person who sent it use io.emit
 		//send to everyone except person who sent it use socket.broadcast
-		.emit('message', message);
+		io.emit('message', message);
 	});
 
 	//event, data to send
