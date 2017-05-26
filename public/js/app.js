@@ -10,6 +10,15 @@ socket.on('connect',function (){
 		room: room
 	});
 })
+socket.on('disconnect', function(){
+	console.log('Disconnected');
+
+	setTimeout(function() { alert("Internet Disconnected / Server Error"); }, 4000);
+
+//Your Code Here
+});
+
+
 
 jQuery('.room-title').text(room);
 
