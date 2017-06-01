@@ -13,7 +13,7 @@ socket.on('connect',function (){
 socket.on('disconnect', function(){
 	console.log('Disconnected');
 
-	setTimeout(function() { alert("Internet Disconnected / Server Error"); }, 4000);
+	alert("Internet Disconnected / Server Error");
 
 //Your Code Here
 });
